@@ -1,0 +1,61 @@
+    {% extends "includes/base_site.html" %}
+    {% load static %}  
+
+    {% block style %}
+    <link type="text/css" rel="stylesheet" href="{% static 'style/css/site-user-login.css' %}" />
+    {% endblock %}
+
+    {% block titulo %}Login{% endblock %}
+
+    {% block conteudo %}
+    <div class="section"></div>
+    <main>
+        <center>
+        <div class="container">
+            <!-- <div>
+                <h5 class="indigo-text">Bandeco Logo</h5>
+            </div> -->
+            <div class="row">
+                <div class="col s12 m6 offset-m3">
+                    <div class="card grey lighten-5">
+                        <div class="card-content">
+                            <span class="card-title">Bem Vindo!</span>
+                            <div class="row">
+                                <form class="col s12">
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <input id="email" type="email" class="validate">
+                                            <label for="email">Email</label>
+                                        </div>
+                                        <div class="input-field col s12">
+                                            <input id="senha" type="password" class="validate">
+                                            <label for="senha">Senha</label>
+                                        </div>
+                                        <div class="input-field col s12">
+                                            <button class="btn waves-effect waves-light blue darken-1" type="submit" name="action">Entrar</button>
+                                        </div>
+                                        <div class="input-field col s6 ">
+                                            <label>
+                                                <input type="checkbox" />
+                                                <span>Gravar login</span>
+                                            </label>
+                                        </div>
+                                        <div class="input-field col s4 offset-s2">
+                                            <label>
+                                                <a href="#">Esqueci a senha</a> 
+                                            </label>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p>Ainda não tem conta? </p><a href="#!">Criar Conta</a>
+        </center>
+    </main>
+    {% endblock %}
+    {% block script %}
+    <script src="{% static 'script/js/site-user-login.js' %}"></script>
+    {% endblock %}

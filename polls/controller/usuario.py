@@ -3,8 +3,8 @@ from django.http import HttpResponse
 from django.template import loader
 
 
-def getPage(request):
+def getPageLogin(request):
     conteudo = {
-        "Home": "Home"
+        'nome': 'Login'
     }
-    return render(request, 'home.html', conteudo)
+    return render(request, 'usuario/usuario_login.html', conteudo)
