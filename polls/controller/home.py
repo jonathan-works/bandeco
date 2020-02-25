@@ -7,4 +7,4 @@ def getPage(request):
     conteudo = {
         "Home": "Home"
     }
-    return render(request, 'home.html', conteudo)
+    return render(request, 'index.html', conteudo)
