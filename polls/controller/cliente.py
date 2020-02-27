@@ -4,8 +4,8 @@ from django.template import loader
 from django.contrib.auth.decorators import login_required
 
 @login_required
-def getPage(request):
+def getPageCadastro(request):
     conteudo = {
-        'nome': 'Login'
+        "Home": "Home"
     }
-    return render(request, 'usuario/index.html', conteudo)
+    return render(request, 'cliente/cliente.html', conteudo)

@@ -1,0 +1,54 @@
+{% load static %} 
+<header>
+    <ul id="nav-mobile" class="sidenav sidenav-fixed" style="transform: translateX(0%);">
+        <li class="logo" style="height: 200px; padding-left: 50px;">
+            <!-- <a id="logo-container" href="/" class="brand-logo" > -->
+            <!-- <object id="front-page-logo" type="image/svg+xml" data="res/materialize.svg">Your browser does not support SVG</object></a> -->
+            <img src="https://marmitexentrega.com.br/img/marmitex.png" alt="" style="width: 200px;">
+        </li>
+        <div class="collection">
+            <!-- <li class="collection-header">
+                <h4>First Names</h4>
+            </li> -->
+            <li><a href="{% url 'usuario' %}" class="collection-item {% if request.resolver_match.view_name == 'usuario' %}active{% endif %}">Home</a></li>
+            <li><a href="{% url 'cliente.cadastro' %}" class="collection-item {% if request.resolver_match.view_name == 'cliente.cadastro' %}active{% endif %}">Cliente</a></li>
+            <li><a href="#!" class="collection-item {% if request.resolver_match.view_name == 'cardapio' %}active{% endif %}" >Cardapio</a></li>
+            <li><a href="#!" class="collection-item {% if request.resolver_match.view_name == 'produto' %}active{% endif %}">Produto</a></li>
+        </div>  
+    </ul>
+    <nav>
+    <ul id="slide-out" class="sidenav">
+        <li>
+            <div class="user-view">
+                <div class="background">
+                    <img src="images/office.jpg">
+                </div>
+                <a href="#user"><img class="circle" src="images/yuna.jpg"></a>
+                <a href="#name"><span class="white-text name">John Doe</span></a>
+                <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+            </div>
+        </li>
+        <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+        <li><a href="#!">Second Link</a></li>
+        <li><div class="divider"></div></li>
+        <li><a class="subheader">Subheader</a></li>
+        <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+    </ul>
+
+    <ul id="dropdown1" class="dropdown-content">
+        <li><a href="#!">Minha conta</a></li>
+        
+    </ul>
+
+    <div class="nav-wrapper">
+        <a href="#" class="brand-logo">Logo</a>
+        <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="{% url 'logout' %}">Sair</a></li>
+            <li><a  class="dropdown-trigger" href="#!" data-target="dropdown1"><i class="material-icons">menu</i></a></li>
+            <!-- <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li> -->
+        </ul>
+    </div>
+    
+</nav>
+</header>

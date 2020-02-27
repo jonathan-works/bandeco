@@ -1,0 +1,127 @@
+{% extends "includes/base_site.html" %}
+{% load static %}  
+
+{% block style %}
+<link type="text/css" rel="stylesheet" href="{% static 'style/css/site-user-login.css' %}" />
+{% endblock %}
+
+{% block titulo %}Login{% endblock %}
+
+{% block conteudo %}
+{% include "../includes/header_usuario.html" %}
+<main> 
+    <div class="row">
+        <div class="col s12 m9 offset-m3">
+            <div class="row">
+                <div class="col s12 ">
+                    <h4>Cadastrar Cliente</h4>
+                </div>
+                <form class="" name="formulario">
+                    <div class="row">
+                        <div class="input-field col s5 m5 l5">
+                            <i class="material-icons prefix">account_circle</i>
+                            <input id="inputNome" type="text" class="validate" name="Nome" ng-model="cliente.nome" value="{{cliente.Nome}}">
+                            <label for="inputNome" >Nome</label>
+                        </div>
+                        <div class="input-field col s5 m5 l5">
+                            <i class="material-icons prefix">perm_identity</i>
+                            <input id="inputCPF" type="text" class="validate" name="CPF" ng-model="cliente.cpf" value="{{cliente.Cpf}}">
+                            <label for="inputCPF">CPF</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s5 m5 l5">
+                            <i class="material-icons prefix">mail</i>
+                            <input id="inpuEmail" type="email" class="validate" name="Email" ng-model="cliente.email" value="{{cliente.Email}}">
+                            <label for="inpuEmail">Email</label>
+                        </div>
+                        <div class="input-field col s5 m5 l5">
+                            <i class="material-icons prefix">phone</i>
+                            <input id="inputResidencial" type="tel" class="validate" name="Residencial" ng-model="cliente.telefone.residencial" value="{{cliente.Telefone.Residencial}}">
+                            <label for="inputResidencial">Residêncial</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s5 m5 l5">
+                            <i class="material-icons prefix">phone</i>
+                            <input id="inputCelular" type="tel" class="validate" name="Celular" ng-model="cliente.telefone.celular" value="{{cliente.Telefone.Celular}}">
+                            <label for="inputCelular">Celular</label>
+                        </div>
+            
+                        <div class="input-field col s5 m5 l5">
+                            <i class="material-icons prefix">phone</i>
+                            <input id="inputComercial" type="tel" class="validate" name="Comercial" ng-model="cliente.telefone.comercial" value="{{cliente.Telefone.Comercial}}">
+                            <label for="inputComercial">Comercial</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s5 m5 l5">
+                            <i class="material-icons prefix">location_city</i>
+                            <input id="inputCEP" type="text" class="validate" name="Cep" ng-model="cliente.endereco.cep" value="{{cliente.Endereco.Cep}}" ng-blur=" buscaEnderecoPorCep(cliente.endereco.cep)">
+                            <label for="inputCEP">CEP</label>
+                        </div>
+                        <div class="input-field col s5 m5 l5">
+                            <i class="material-icons prefix">location_city</i>
+                            <input id="inputNumero" type="text" class="validate" name="Numero" ng-model="cliente.Endereco.Numero">
+                            <label for="inputNumero">Número</label>
+                        </div>
+                    </div>
+            
+                    <div class="row">
+                        <div class="input-field col s5 m5 l5">
+                            <i class="material-icons prefix">location_city</i>
+                            <input id="inputLogradouro" type="text" class="validate" name="Logradouro" ng-model="cliente.endereco.logradouro" value="{{cliente.Endereco.Logradouro}}">
+                            <label for="inputLogradouro">Logradouro</label>
+                        </div>
+                        <div class="input-field col s5 m5 l5">
+                            <i class="material-icons prefix">location_city</i>
+                            <input id="inputBairro" type="text" class="validate" name="Bairro" ng-model="cliente.endereco.bairro" value="{{cliente.Endereco.Bairro}}">
+                            <label for="inputBairro">Bairro</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s5 m5 l5">
+                            <i class="material-icons prefix">location_city</i>
+                            <input id="inputLocalidade" type="text" class="validate" name="Localidade" ng-model="cliente.endereco.localidade" value="{{cliente.Endereco.Localidade}}">
+                            <label for="inputLocalidade">Localidade</label>
+                        </div>
+                        <div class="input-field col s5 m5 l5">
+                            <i class="material-icons prefix">location_city</i>
+                            <input id="inputEstado" type="text" class="validate" name="Estado" ng-model="cliente.endereco.uf" value="{{cliente.Endereco.UF}}">
+                            <label for="inputEstado">Estado</label>
+                        </div>
+                    </div>
+                    <div class="row left-align">
+                        <div class="col s5 m5 l5">
+                            <button class="btn waves-effect waves-light" type="submit" ng-click="submeter()" name="action">
+                                Submit
+                                <i class="material-icons right">send</i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+<footer>
+
+</footer>
+{% endblock %}
+
+{% block script %}
+<script>    
+    function openSidenav()
+    {   
+        var sidenav = $('.sidenav');
+        var instance = M.Sidenav.getInstance(sidenav); 
+        instance.open();
+    }
+    $(document).ready(function() {
+        Materialize.updateTextFields();
+    });
+    // $(document).ready(function() {
+    //     $(".dropdown-trigger").dropdown();
+    // });
+</script>
+{% endblock %}
