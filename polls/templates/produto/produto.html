@@ -1,0 +1,66 @@
+{% extends "includes/base_site.html" %}
+{% load static %}  
+
+{% block style %}
+<!-- <link type="text/css" rel="stylesheet" href="{% static 'style/css/site-user-login.css' %}" /> -->
+{% endblock %}
+
+{% block titulo %}Produto{% endblock %}
+
+{% block conteudo %}
+{% include "../includes/header_usuario.html" %}
+<main> 
+    <div class="row">
+        
+        <div class="col s12 m9 offset-m3">
+            <h4 class="header">Cadastrar Produto</h4>    
+            <div class="col s12 m10">
+                <div class="card horizontal">
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <!-- <h4 class="header">Cadastrar Produto</h4> -->
+                            <form class="" name="formulario" action="" method="POST">
+                                <div class="row">
+                                    <div class="input-field col s12 m12 l11">
+                                        <i class="material-icons prefix">title</i>
+                                        <input id="inputNome" type="text" class="validate" name="Nome" ng-model="cliente.nome" value="{{cliente.Nome}}">
+                                        <label for="inputNome">Titulo</label>
+                                    </div>
+                                    <div class="input-field col s12 m12 l11">
+                                        <i class="material-icons prefix">art_track</i>
+                                        <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+                                        <label for="icon_prefix2">First Name</label>
+                                    </div>
+                                    <div class="input-field col s12 m12 l11 right-align">
+                                        <button type="submit" class="waves-effect waves-light btn">Salvar</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<footer>
+
+</footer>
+{% endblock %}
+
+{% block script %}
+<script>    
+    function openSidenav()
+    {   
+        var sidenav = $('.sidenav');
+        var instance = M.Sidenav.getInstance(sidenav); 
+        instance.open();
+    }
+    $(document).ready(function() {
+        Materialize.updateTextFields();
+    });
+    // $(document).ready(function() {
+    //     $(".dropdown-trigger").dropdown();
+    // });
+</script>
+{% endblock %}

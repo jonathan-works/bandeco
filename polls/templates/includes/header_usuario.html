@@ -13,7 +13,7 @@
             <li><a href="{% url 'usuario' %}" class="collection-item {% if request.resolver_match.view_name == 'usuario' %}active{% endif %}">Home</a></li>
             <li><a href="{% url 'cliente.cadastro' %}" class="collection-item {% if request.resolver_match.view_name == 'cliente.cadastro' %}active{% endif %}">Cliente</a></li>
             <li><a href="#!" class="collection-item {% if request.resolver_match.view_name == 'cardapio' %}active{% endif %}" >Cardapio</a></li>
-            <li><a href="#!" class="collection-item {% if request.resolver_match.view_name == 'produto' %}active{% endif %}">Produto</a></li>
+            <li><a href="{% url 'produto.cadastro' %}" class="collection-item {% if request.resolver_match.view_name == 'produto' %}active{% endif %}">Produto</a></li>
         </div>  
     </ul>
     <nav>
