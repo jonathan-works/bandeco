@@ -1,0 +1,58 @@
+@import url("http://cdn.shopify.com/s/files/1/1775/8583/t/1/assets/gallery-materialize.min.opt.css?100");
+
+@media screen and (min-width: 750px) {
+    #dynamic-checkout-cart {
+    min-height: 50px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  #dynamic-checkout-cart {
+    min-height: 240px;
+  }
+}
+
+/* Carrinho */
+/* @media screen and (max-width: 749px)
+    { */
+    .carrinho-bloco{
+        display: none;
+        }
+    /* } */
+
+    @media screen and (min-width: 750px){
+        .cardapio-open-carrinho{
+        padding-left: 150px !important;
+        padding-right: 20px;
+        transition: 500ms all;
+        }
+
+        .carrinho-bloco{
+        display: block;
+        position: absolute;
+        left: -250px;  
+        width: 250px;
+        height: 100%;
+        /* background-color: bisque; */
+        transition: 500ms all;
+        }
+
+        .carrinho-bloco.open{
+        left: 0;
+        }
+    }
+    .carrinho-botao{
+        display: block;
+        position: fixed;
+        left: 2px;
+        bottom: 2px;
+        margin-left: 10px;
+        margin-bottom: 10px;
+        transition: 20ms;
+        z-index: 0;
+        }
+        
+        .carrinho-botao:active{
+        left: 0px;
+        bottom: 0px;
+        }

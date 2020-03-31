@@ -12,9 +12,11 @@
     <body>
         {% block conteudo %}{% endblock %}
         <!-- <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script> -->
-        <script src="{% static 'js/jquery.js' %}"></script>
-        <script src="{% static 'materialize/js/materialize.min.js' %}"></script>
-        <script src="{% static 'script/js/site.js' %}"></script>
+        <script src="{% static 'script/js/vendor.bundle.js' %}"></script>
+        <script src="{% static 'script/js/main.bundle.js' %}"></script>
+        <!-- <script src="{% static 'js/jquery.js' %}"></script>
+        <script src="{% static 'materialize/js/materialize.min.js' %}"></script> -->
+        <!-- <script src="{% static 'script/js/site.js' %}"></script> -->
         {% block script %}{% endblock %}
     </body>
 </html>

@@ -1,3 +1,2 @@
 from django.db import models
-
-# Create your models here.
+from polls.model import produto, imagem, cardapio, carpapio_produto
