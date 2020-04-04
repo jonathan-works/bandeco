@@ -6,11 +6,14 @@ from polls.model.produto import Produto
 
 def getPage(request):
 
-    produtos = list(Produto.objects.all())
+    #produtos = Produto.objects.all()
+
+    produtos = Produto.objects.prefetch_related('imagens').all()
 
     conteudo = {
         "Titulo": "Home",
         "produtos": produtos
     }
+     
 
     return render(request, 'index.html', conteudo)

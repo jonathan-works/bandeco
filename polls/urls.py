@@ -12,6 +12,7 @@ urlpatterns = [
     path('produto/cadastro', produto.getPageCadastro , name='produto.cadastro'),
 
     path('produto/consulta', produto.getPageConsulta , name='produto.consulta'),
+    path('produto/deletar/<int:id>', produto.apagarProduto, name='produto.deletar'),
     # path('produto/editar', produto.getPageCadastro , name='produto.cadastro')
 
 

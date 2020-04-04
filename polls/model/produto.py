@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from polls.model.imagem import Imagem
 
 class Produto(models.Model):
     
@@ -8,6 +9,8 @@ class Produto(models.Model):
     texto = models.TextField()
     preco = models.DecimalField(max_digits=6, decimal_places=2)
     # ordem = models.IntegerField()
+    #imagens = models.OneToMany(to=Imagen)
+    
     data_criacao = models.DateTimeField(default=timezone.now)
     data_atualizacao = models.DateTimeField(default=None, blank=True, null=True)
     

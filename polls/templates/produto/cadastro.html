@@ -19,17 +19,17 @@
                     <div class="card-stacked">
                         <div class="card-content">
                             <!-- <h4 class="header">Cadastrar Produto</h4> -->
-                            <form class="" action="/produto/cadastro/post" method="POST">
+                            <form class="" action="/produto/cadastro/post" method="POST" enctype="multipart/form-data">
                                 {% csrf_token %} 
                                 <div class="row">
                                     <div class="input-field col s12 m12 l11">
                                         <i class="material-icons prefix">title</i>
-                                        <input id="inputNome" type="text" class="validate" name="titulo" ng-model="cliente.nome" value="">
+                                        <input id="inputNome" type="text" class="validate" name="titulo" value="">
                                         <label for="inputNome">Titulo</label>
                                     </div>
                                     <div class="input-field col s12 m12 l11">
                                         <i class="material-icons prefix">title</i>
-                                        <input id="inputPreci" type="text" class="validate" name="preco" ng-model="cliente.nome" value="">
+                                        <input id="inputPreco" type="text" class="validate" name="preco" value="">
                                         <label for="inputPreco">Preço</label>
                                     </div>
                                     <div class="input-field col s12 m12 l11">
@@ -41,6 +41,11 @@
                                         <i class="material-icons prefix">art_track</i>
                                         <textarea id="icon_Texto" class="materialize-textarea" name="texto"></textarea>
                                         <label for="icon_Texto">Texto</label>
+                                    </div>
+                                    <div class="input-field col s12 m12 l11">
+                                        <i class="material-icons prefix">title</i>
+                                        <label for="inputImg">Imagem</label>
+                                        <input type="file" id="inputImg" name="imagem" accept="image/png, image/jpeg">
                                     </div>
                                     <div class="input-field col s12 m12 l11 right-align">
                                         <button type="submit" class="waves-effect waves-light btn">Salvar</button>

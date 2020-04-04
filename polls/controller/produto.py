@@ -3,11 +3,20 @@ from django.http import HttpResponse
 from django.template import loader
 from django.contrib.auth.decorators import login_required
 from polls.model.produto import Produto
+from polls.model.imagem import Imagem
+from polls.model.upload_file_form import UploadFileForm
+from django.core.files.storage import FileSystemStorage
+
+
+def handle_uploaded_file(f):
+    with open('some/file/name.txt', 'wb+') as destination:
+        for chunk in f.chunks():
+            destination.write(chunk)
 
 @login_required
 def getPageCadastro(request):
     conteudo = {
-        "titulo": "Home"
+        "titulo": "Produto Cadastro"
     }
     
     return render(request, 'produto/cadastro.html', conteudo)
@@ -15,15 +24,22 @@ def getPageCadastro(request):
 
 def postPageCadastro(request):
     
-    data = {}
-    
     if request.method == 'POST':
-        data['titulo'] = request.POST.get('titulo', '')
-        data['descricao'] = request.POST.get('descricao', '') 
-        data['texto'] = request.POST.get('texto', '')
-        data['preco'] = request.POST.get('preco', 0)
-        produto = Produto.create(data['titulo'], data['descricao'], data['texto'], data['preco'])
+        title = request.POST.get('titulo', '')
+        descricao = request.POST.get('descricao', '') 
+        texto = request.POST.get('texto', '')
+        preco = request.POST.get('preco', 0)
+
+        produto = Produto.create(title, descricao, texto, preco)
         produto.save()
+
+        uploaded_file = request.FILES['imagem']
+        fileSystemStorage = FileSystemStorage()
+        filename  = fileSystemStorage.save(uploaded_file.name, uploaded_file)
+
+        imagem = Imagem.create(uploaded_file.name, 1, fileSystemStorage.url(filename), produto)
+        imagem.save()
+
     return render(request, 'produto/cadastro.html')
 
 def getPageConsulta(request):
@@ -51,3 +67,11 @@ def getPageConsulta(request):
     }
     
     return render(request, 'produto/consulta.html', conteudo)
+
+def apagarProduto(request, id):
+
+   
+    produto = Produto.objects.get(id=id)
+    produto.delete()
+
+    return getPageConsulta(request)
