@@ -16,12 +16,11 @@ def handle_uploaded_file(f):
 @login_required
 def getPageCadastro(request):
     conteudo = {
-        "titulo": "Produto Cadastro"
+        "titulo": "Cadastro de Produto"
     }
     
     return render(request, 'produto/cadastro.html', conteudo)
     
-
 def postPageCadastro(request):
     
     if request.method == 'POST':

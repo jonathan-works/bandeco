@@ -14,8 +14,8 @@
         <div class="col s12 m9 offset-m3">
             <h4 class="header">{{titulo}}</h4>    
             <div class="col s12 m12">
-                <div class="col s12 m12">
-                    <a class="waves-effect waves-light btn" href="{% url 'produto.cadastro'%}"><i class="material-icons right">input</i>Cadastra</a>
+                <div class="col s12 m12 right-align">
+                    <a class="waves-effect waves-light btn" href="{% url 'produto.cadastro'%}"><i class="material-icons right">add_circle_outline</i>Cadastrar</a>
                 </div>
                 <form action="/produto/consulta" method="GET">
                     {% csrf_token %} 
@@ -60,7 +60,7 @@
                                       <th>Titulo</th>
                                       <th>Descrição</th>
                                       <th>Preço</th>
-                                      <tr>#</tr>
+                                      <tr>Ações</tr>
                                   </tr>
                                 </thead>
                                 <tbody>
@@ -69,7 +69,7 @@
                                             <td>{{produto.titulo}}</td>
                                             <td>{{produto.descricao}}</td>
                                             <td>{{produto.preco}}</td>
-                                            <td>
+                                            <td class="right-align">
                                                 <a class="waves-effect waves-light btn" href="{% url 'produto.deletar' id=produto.id%}">Apagar</a>
                                             </td>
                                         </tr>

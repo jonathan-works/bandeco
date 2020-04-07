@@ -105,9 +105,12 @@
           <div class="categories-container pin-top" style="top: 0px;">
             <ul class="categories db">
               <li class="k"><a href="#all">Todos</a></li>
-              <li><a href="#polygon">Prato do dia</a></li>
+              {%for cardapio in cardapios%}
+                <li><a href="#{{cardapio.tag}}">{{cardapio.titulo}}</a></li>
+              {%endfor%}
+              <!-- <li><a href="#polygon">Prato do dia</a></li>
               <li><a href="#bigbang">Bebidas</a></li>
-              <li><a href="#sacred">Sobremesas</a></li>
+              <li><a href="#sacred">Sobremesas</a></li> -->
             </ul>
           </div>
         </div>
@@ -134,10 +137,10 @@
           <div class="db">
             <div class="b e" style="position: relative; height: 661.292px;">
               {% for produto in produtos %}
-                      <div class="d hx hf gu gallery-item gallery-expand ce polygon" style="position: absolute; left: 0px; top: 0px;"><div class="placeholder">
+                      <div class="d hx hf gu gallery-item gallery-expand ce {{produto.cardapioTag}}" style="position: absolute; left: 0px; top: 0px;"><div class="placeholder">
                         <div class="gallery-curve-wrapper">
                             <a class="gallery-cover gray">
-                            <img class="responsive-img" src="/static{{produto.imagens.get}}" alt="placeholder" crossorigin="anonymous">
+                            <img class="responsive-img" src="/static{{produto.urlImgagemPrincipal}}" alt="placeholder" crossorigin="anonymous">
                           </a>
                           <div class="gallery-header">
                             <span>{{produto.titulo}}</span>

@@ -12,7 +12,7 @@
             </li> -->
             <li><a href="{% url 'usuario' %}" class="collection-item {% if request.resolver_match.view_name == 'usuario' %}active{% endif %}">Home</a></li>
             <li><a href="{% url 'cliente.cadastro' %}" class="collection-item {% if request.resolver_match.view_name == 'cliente.cadastro' %}active{% endif %}">Cliente</a></li>
-            <li><a href="#!" class="collection-item {% if request.resolver_match.view_name == 'cardapio' %}active{% endif %}" >Cardapio</a></li>
+            <li><a href="{% url 'cardapio.consulta' %}" class="collection-item {% if request.resolver_match.view_name == 'cardapio' %}active{% endif %}" >Cardapio</a></li>
             <li><a href="{% url 'produto.consulta' %}" class="collection-item {% if request.resolver_match.view_name == 'produto' %}active{% endif %}">Produto</a></li>
         </div>  
     </ul>
@@ -34,10 +34,8 @@
         <li><a class="subheader">Subheader</a></li>
         <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
     </ul>
-
     <ul id="dropdown1" class="dropdown-content">
         <li><a href="#!">Minha conta</a></li>
-        
     </ul>
 
     <div class="nav-wrapper">

@@ -14,6 +14,9 @@
         <div class="col s12 m9 offset-m3">
             <h4 class="header">{{titulo}}</h4>    
             <div class="col s12 m12">
+                <div class="col s12 m12 right-align">
+                    <a class="waves-effect waves-light btn" href="{% url 'cardapio.cadastro'%}"><i class="material-icons right">add_circle_outline</i>Cadastrar</a>
+                </div>
                 <form action="/cardapio/consulta" method="GET">
                     {% csrf_token %} 
                     <div class="card-stacked">
@@ -57,6 +60,9 @@
                                         <tr>
                                             <td>{{cardapio.titulo}}</td>
                                             <td>{{cardapio.descricao}}</td>
+                                            <td class="right-align">
+                                                <a class="waves-effect waves-light btn" href="{% url 'cardapio.deletar' id=cardapio.id%}">Apagar</a>
+                                            </td>
                                         </tr>
                                     {%endfor%}
                                 </tbody>

@@ -13,7 +13,10 @@
     <div class="row">
         
         <div class="col s12 m9 offset-m3">
-            <h4 class="header">{{titulo}}</h4>    
+            <h4 class="header">{{titulo}}</h4> 
+            <div class="col s12 m10 right-align">
+                <a href="{% url 'cardapio.consulta' %}">Voltar</a>
+            </div>   
             <div class="col s12 m10">
                 <div class="card horizontal">
                     <div class="card-stacked">
@@ -31,6 +34,33 @@
                                         <i class="material-icons prefix">art_track</i>
                                         <textarea id="icon_Descricao" class="materialize-textarea" name="descricao"></textarea>
                                         <label for="icon_Descricao">Descrição</label>
+                                    </div>
+                                    <div class="col s12">
+                                        <h5>Pratos</h5>
+                                        <hr>
+                                        
+                                        <table class="col s12">
+                                            <thead>
+                                              <tr>
+                                                  <th>Nome</th>
+                                                  <th>Incluso</th>
+                                              </tr>
+                                            </thead>
+                                    
+                                            <tbody>
+                                                {% for produto in produtos %}
+                                                    <tr>
+                                                        <td>{{produto.titulo}}</td>
+                                                        <td>
+                                                            <label>
+                                                                <input type="checkbox" name="produtos" value="{{produto.id}}" />
+                                                                <span></span>
+                                                            </label>
+                                                        </td>
+                                                    </tr>
+                                                {%endfor%}
+                                            </tbody>
+                                          </table>
                                     </div>
                                     <div class="input-field col s12 m12 l11 right-align">
                                         <button type="submit" class="waves-effect waves-light btn">Salvar</button>

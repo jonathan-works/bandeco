@@ -18,6 +18,7 @@ urlpatterns = [
 
     path('cardapio/cadastro/post', cardapio.postPageCadastro , name='cardapio.cadastro.cadastro'),
     path('cardapio/cadastro', cardapio.getPageCadastro , name='cardapio.cadastro'),
+    path('cardapio/deletar/<int:id>', cardapio.apagarCardapio, name='cardapio.deletar'),
     
     path('cardapio/consulta', cardapio.getPageConsulta , name='cardapio.consulta'),
     # path('cardapio/editar', produto.getPageCadastro , name='produto.cadastro')
