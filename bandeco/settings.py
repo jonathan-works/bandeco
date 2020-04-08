@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'polls',
     'materialize',
-    'jquery'
+    'jquery',
+    'api'
 ]
 
 MIDDLEWARE = [
