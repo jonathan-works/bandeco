@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/jonathan-works/bandeco#readme",
   "dependencies": {
-    "datatables.net": "^1.10.20",
+    "datatables.net": "^1.10.22",
     "jquery": "^3.4.1",
     "material-design-icons": "^3.0.1",
     "materialize-css": "^1.0.0-rc.2"
